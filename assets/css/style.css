@@ -1,6 +1,6 @@
 :root {
   /*Colors*/
-  --bg-color: #fffcf2;
+  --bg-color: #fefae0;
   --color: #531a05;
   --btn-bg-color: #722d14;
   --btn-color: #f4e7c0;
@@ -32,6 +32,7 @@ body {
 
 .main,
 .sidebar {
+  background-color: #dda25e28;
   padding: 15px;
   height: fit-content;
   border: 2px solid var(--btn-bg-color);
@@ -52,12 +53,14 @@ body {
   transition: .5s ease-in-out;
 }
 
-.btn:hover {
+.btn:hover,
+.btnAnimal.active {
   color: var(--btn-bg-color);
   background-color: var(--btn-color);
 }
 
 .btnAnimal {
+  border: 1px solid var(--btn-bg-color);
   text-transform: capitalize;
 }
 
@@ -73,7 +76,7 @@ form label {
 
 form input {
   width: 100%;
-  background: none;
+  background: var(--bg-color);
   border: 1px solid var(--btn-bg-color);
   border-radius: 2px;
   padding: 4px 8px;
@@ -86,10 +89,11 @@ form input {
 
 .card {
   flex-basis: 30%;
-  background: none;
+  background: var(--bg-color);
   border: 1px solid var(--btn-bg-color);
   border-radius: 6px;
   padding: 10px;
+  height: fit-content;
 }
 
 .card h6 {
