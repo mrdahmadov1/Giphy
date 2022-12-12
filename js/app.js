@@ -39,20 +39,15 @@ $(document).ready(function () {
     }
     this.classList.add("active");
     $.ajax({
-      url: `http://api.giphy.com/v1/gifs/search?q=${this.textContent.toLowerCase()}&api_key=Mk4HHWpefvD8sqXcSB2YLpS5e5W9iMeP&limit=10`,
+      url: `https://api.giphy.com/v1/gifs/search?q=${this.textContent.toLowerCase()}&api_key=Mk4HHWpefvD8sqXcSB2YLpS5e5W9iMeP&limit=15`,
       method: "GET",
     }).then((response) => {
       response = response.data;
       for (gif of response) {
-        const newCard = createCard(
-          gif.images.fixed_height_still.url,
-          gif.rating
-        );
+        const newCard = createCard(gif.images.downsized.url, gif.rating);
         $(".cards").append(newCard);
       }
     });
-    /**This part uncompleted */
-    // $("img").gifplayer();
   };
 
   /**Submit Event Listener */
